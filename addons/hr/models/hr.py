@@ -270,7 +270,7 @@ class Employee(models.Model):
             department_id = vals['department_id'] if vals.get('department_id') else self[:1].department_id.id
             # When added to a department or changing user, subscribe to the channels auto-subscribed by department
             self.env['mail.channel'].sudo().search([
-                ('subscription_department_ids', 'in', department_id)
+                ('subscription_department_ids', 'in', self.mapped('department_id').ids) # Modif adhoc: department_id many2many, pas many2one
             ])._subscribe_users()
         return res
 
