@@ -51,3 +51,10 @@ future==0.16.0
 # Needed for OpenUpgrade
 odoorpc==0.6.0
 openupgradelib
+# Dépendances Adhoc
+cryptography
+pymssql
+python-stdnum==1.9
+pymssql==2.2.1
+holidays
+openpyxl
