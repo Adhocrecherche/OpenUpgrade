@@ -58,3 +58,4 @@ python-stdnum==1.9
 pymssql==2.2.1
 holidays
 openpyxl
+zxcvbn
