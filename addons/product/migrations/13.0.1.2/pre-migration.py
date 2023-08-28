@@ -53,6 +53,14 @@ def insert_missing_product_template_attribute_line(env):
     reintroduce missing product.template.attribute.line records with
     active = False needed later on next steps for DB integrity.
     """
+    # AJOUT ADH: retirer la contrainte not null sur display_mode pour éviter un plantage des insertions subséquentes
+    # (champ required ajouté via module product_configurator)
+    openupgrade.logged_query(
+        env.cr,
+        """
+         ALTER TABLE product_template_attribute_line ALTER COLUMN display_mode DROP NOT NULL""",
+    )
+
     openupgrade.add_fields(env, [(
         "active", "product.template.attribute.line",
         "product_template_attribute_line", "boolean", False, "product", True,
