@@ -48,3 +48,11 @@ pypiwin32 ; sys_platform == 'win32'
 # Needed for OpenUpgrade
 odoorpc==0.7.0
 openupgradelib
+# Dépendances Adhoc
+cryptography
+pymssql
+python-stdnum==1.9
+pymssql==2.2.1
+holidays
+openpyxl
+zxcvbn
