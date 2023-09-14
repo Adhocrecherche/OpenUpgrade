@@ -57,3 +57,4 @@ pymssql==2.2.1
 holidays
 openpyxl
 zxcvbn
+pysftp
