@@ -49,7 +49,8 @@ pypiwin32 ; sys_platform == 'win32'
 odoorpc==0.7.0
 openupgradelib
 # Dépendances Adhoc
-cryptography
+cryptography==40.0.2; python_version < '3.7'
+cryptography; python_version > '3.6'
 pymssql
 python-stdnum==1.9
 pymssql==2.2.1
