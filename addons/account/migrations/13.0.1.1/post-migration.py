@@ -435,7 +435,7 @@ def compute_balance_for_draft_invoice_lines(env):
     move_obj = env['account.move']
     groups = move_obj.read_group(
         [
-            ('state', 'in', ('draft', 'cancel')), # TODO V13 need to include custom states?
+            ('state', 'in', ('draft', 'cancel', 'credit', 'paid', 'hold', 'prepaid', 'validation', 'valid')), # TODO V13 need to include custom states?
             ('type', 'in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund')),
         ],
         ["company_id"],
