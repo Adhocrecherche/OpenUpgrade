@@ -631,7 +631,10 @@ class PoFileReader:
 
             # in case of moduleS keep only the first
             match = re.match(r"(module[s]?): (\w+)", entry.comment)
-            _, module = match.groups()
+            try:
+                _, module = match.groups()
+            except AttributeError:
+                _logger.error("malformed po file: missing module comment for entry %s" % entry.comment)
             comments = "\n".join([c for c in entry.comment.split('\n') if not c.startswith('module:')])
             source = entry.msgid
             translation = entry.msgstr
