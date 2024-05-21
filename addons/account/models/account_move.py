@@ -3712,7 +3712,7 @@ class AccountMoveLine(models.Model):
         moves = self.mapped('move_id')
 
         # Prevent deleting lines on posted entries
-        if any(m.state == 'posted' for m in moves):
+        if any(m.state == 'posted' for m in moves) and not self._context.get('allow_posted_move_deletion', False):
             raise UserError(_('You cannot delete an item linked to a posted entry.'))
 
         # Check the lines are not reconciled (partially or not).
