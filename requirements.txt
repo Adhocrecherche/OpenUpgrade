@@ -26,6 +26,9 @@ psutil==5.6.6
 psycopg2==2.7.7; sys_platform != 'win32' and python_version < '3.8'
 psycopg2==2.8.3; sys_platform == 'win32' or python_version >= '3.8'
 pydot==1.4.1
+# pygments is not required, but stops web module from logging « Cannot analyze code. Pygments package not found. »
+#   It's a known issue according to https://github.com/OCA/maintainer-quality-tools/issues/568
+pygments==2.4.2
 python-ldap==3.1.0; sys_platform != 'win32'
 pyparsing==2.2.0
 PyPDF2==1.26.0
