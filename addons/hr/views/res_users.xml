@@ -113,14 +113,16 @@
                                 <div id="o_work_employee_container"> <!-- These two div are used to position org_chart -->
                                     <div id="o_work_employee_main">
                                         <group string="Location">
-                                            <field name="department_id" attrs="{'readonly': [('can_edit', '=', False)]}"/>
+                                            <!-- Retiré dû au surchargement pour convertir ce champ en M2M -->
+                                            <!-- <field name="department_id" attrs="{'readonly': [('can_edit', '=', False)]}"/> -->
                                             <field name="address_id"
                                                 context="{'show_address': 1}"
                                                 options='{"always_reload": True, "highlight_first_line": True}'
                                                 attrs="{'readonly': [('can_edit', '=', False)]}"/>
                                         </group>
                                         <group name="managers" string="Responsibles">
-                                            <field name="employee_parent_id" attrs="{'readonly': [('can_edit', '=', False)]}"/>
+                                            <!-- Retiré dû au surchargement pour convertir ce champ en M2M -->
+                                            <!-- field name="employee_parent_id" attrs="{'readonly': [('can_edit', '=', False)]}"/ -->
                                             <field name="coach_id" attrs="{'readonly': [('can_edit', '=', False)]}"/>
                                         </group>
                                     </div>
